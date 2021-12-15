@@ -37,9 +37,15 @@
                 @Html.DisplayFor(modelItem => item.ExpiryDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }) 
+                <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-sm btn-success" >
+                    <i class="fas fa-edit"></i>
+                </a> | 
+                <a href="@Url.Action("Details", new { id = item.Id })" class="btn btn-sm btn-info">
+                    <i class="fas fa-eye"></i>
+                </a> | 
+                <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger" onclick="return confirm ('Are you sure want to delete ?');">
+                    <i class="far fa-trash-alt"></i>
+                </a>
             </td>
         </tr>
 }
